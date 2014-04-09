@@ -1,0 +1,24 @@
+* {
+    user-select: none;
+}
+
+body {
+    background-color: #000000;
+}
+
+#wecast-player {
+    background-color: #333333;
+    width: 480px;
+}
+
+#wecast-media-image {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 320px;
+}
+
+#wecast-thumbs-list {
+    background-color: #EEEEEE;
+    width: 100%;
+    height: 80px;
+}
