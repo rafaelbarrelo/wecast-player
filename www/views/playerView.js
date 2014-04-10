@@ -24,8 +24,8 @@ define(['Backbone', 'components/baseView',
             
             this.player = new MediaElementPlayer(this.select('#wecast-audio'),
                 {
-                    audioWidth: that.PLAYER_WIDTH,
-                    audioHeight: 34,
+                    audioWidth: "100%",
+                    audioHeight: 32,
                     
                     pluginPath: '/lib/media-element/',
                     
