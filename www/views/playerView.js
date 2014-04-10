@@ -4,11 +4,13 @@ define(['Backbone', 'components/baseView',
                  playerTemplate) {
 
     var PlayerView = BaseView.extend({
-
-        id: "wecast-player",
         
-        initialize: function() {
+        PLAYER_WIDTH: 480,
+        
+        initialize: function(options) {
             BaseView.prototype.initialize.call(this);
+            
+            this.options = options;
             
             this.proxedOnTimeUpdate = $.proxy(this.onTimeUpdate, this);
         },
@@ -16,11 +18,13 @@ define(['Backbone', 'components/baseView',
         render: function() {
             var that = this;
             
-            this.$el.html(_.template(playerTemplate));
+            this.$el.html(_.template(playerTemplate, {options: this.options}));
             
-            this.player = new MediaElementPlayer(this.select('#wecast-media-element'),
+            this.$el.css("width", this.PLAYER_WIDTH).addClass("wecast-player");
+            
+            this.player = new MediaElementPlayer(this.select('#wecast-audio'),
                 {
-                    audioWidth: 480,
+                    audioWidth: that.PLAYER_WIDTH,
                     audioHeight: 34,
                     
                     pluginPath: '/lib/media-element/',

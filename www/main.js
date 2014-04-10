@@ -5,7 +5,8 @@ require.config({
         Backbone: 'lib/backbone/backbone-1.1.2',
         jquery: 'lib/jquery/jquery-1.11.0',
         jgestures: 'lib/jgestures/jgestures-0.90',
-        'media-element': 'lib/media-element/mediaelement-and-player'
+        'media-element': 'lib/media-element/mediaelement-and-player',
+        'jquery-wecast': 'plugin/jquery-wecast'
     },
     shim:{
         Backbone: {
@@ -20,14 +21,15 @@ require.config({
         },
         'media-element': {
             deps: ['jquery']
+        },
+        'jquery-wecast': {
+            deps: ['media-element']
         }
     }
 });
 
-require(['jgestures', 'media-element', 'utils/utils'], function() {
+require(['views/mainView', 'jgestures', 'media-element', 'jquery-wecast', 'utils/utils'],
+        function(MainView) {
     
-    require(['views/mainView'], function(MainView) {
-        
-        new MainView({el: 'body'}).render();
-    });
+    new MainView({el: 'body'}).render();
 });

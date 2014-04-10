@@ -1,17 +1,14 @@
-define(['Backbone', 'components/baseView', 'views/playerView'],
-        function(Backbone, BaseView, PlayerView) {
+define(['Backbone', 'components/baseView',
+        'text!templates/main.html'],
+        function(Backbone, BaseView,
+                mainTemplate) {
 
     var MainView = BaseView.extend({
 
-        initialize: function() {
-            BaseView.prototype.initialize.call(this);
-        },
-
         render: function() {
+            this.$el.html(_.template(mainTemplate));
             
-            var playerView = new PlayerView();
-            
-            this.$el.append(playerView.render().el);
+            this.select("#wecast-player").wecast();
             
             return this;
         }
