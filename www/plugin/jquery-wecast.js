@@ -7,7 +7,8 @@ define(['jquery', 'views/playerView'],
             var $this = $(this);
             
             var options = {el: this,
-                           audioSrc: $this.data("audio-src")};
+                           audioSrc: $this.data("audio-src"),
+                           autoPlay: true};
             
             var playerView = new PlayerView(options);
             

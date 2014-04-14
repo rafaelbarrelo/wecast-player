@@ -34,7 +34,9 @@ define(['Backbone', 'components/baseView',
                         
                         $(that.mediaElement).bind('timeupdate', that.proxedOnTimeUpdate);
                         
-                        that.mediaElement.play();
+                        if (that.options.autoPlay) {
+                            that.mediaElement.play();
+                        }
                     }
                 });
             
@@ -46,7 +48,7 @@ define(['Backbone', 'components/baseView',
         },
 
         remove: function() {
-            $(that.mediaElement).unbind('timeupdate', that.proxedOnTimeUpdate);
+            $(this.mediaElement).unbind('timeupdate', this.proxedOnTimeUpdate);
             
             BaseView.prototype.remove.call(this);
         }
