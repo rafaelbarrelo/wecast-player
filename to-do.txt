@@ -1,0 +1,29 @@
+Primeira versão (apenas consumo do conteúdo)
+============================================
+
+- Criar um model para obter todas as medias (imagens, textos e marcadores) para um determinado episódio, utilizando como entrada a url do episódio (que será obtida do feed do podcast).
+
+- Criar a lista horizontal de thumbs, que apresentará as miniaturas (ou ícones de marcadores) de cada quadro, conforme forem ficando visíveis. Essa lista rolará automaticamente conforme o playback estiver sendo executado.
+
+- Criar um frame central onde será apresentada a imagem do frame corrente, a descrição do marcador ou o texto inserido pelo usuário. O conteúdo desse frame irá mudar conforme o playback estiver sendo executado.
+
+- Mostrar ícone do usuário que adicionou o conteúdo do frame atual. Quando um usuário ouvinte tocar neste ícone deverá aparecer um painel mostrando o nome e um link para que o usuário contribuinte possa ser contatado.
+
+
+
+Segunda versão (adição, edição, remoção e denúncia de conteúdo)
+===============================================================
+
+- Quando o playback parar, apresentar os seguintes botões:
+* Adicionar
+* Editar (somente para o usuário que adicionou este conteúdo)
+* Excluir (somente para o usuário que adicionou este conteúdo)
+* Denunciar (menos para o usuário que adicionou este conteúdo)
+
+- Criar um formulário para escolha do tipo de marcador do frame
+
+- Criar um formulário para inserção/edição do texto do frame
+
+- Criar um formulário para upload e recorte da imagem
+
+- Chamar o serviço que armazenará o frame no servidor
